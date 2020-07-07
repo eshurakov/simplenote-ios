@@ -137,6 +137,7 @@
 		A68ABCA224ABCFFA00715EBD /* SPCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68ABCA124ABCFFA00715EBD /* SPCardViewController.swift */; };
 		A68ABCA624ABFA5800715EBD /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68ABCA524ABFA5800715EBD /* UIView+Constraints.swift */; };
 		A68ABCA824ABFB5300715EBD /* SPShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68ABCA724ABFB5300715EBD /* SPShadowView.swift */; };
+		A6A287B524B4CA860053FF80 /* SPSnappingSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A287B424B4CA860053FF80 /* SPSnappingSliderTests.swift */; };
 		A6C0589424AD2B8F006BC572 /* SPNoteHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0589224AD2B8F006BC572 /* SPNoteHistoryViewController.swift */; };
 		A6C0589524AD2B8F006BC572 /* SPNoteHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C0589324AD2B8F006BC572 /* SPNoteHistoryViewController.xib */; };
 		A6C0589724AD375A006BC572 /* SPNoteEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0589624AD375A006BC572 /* SPNoteEditorViewController.swift */; };
@@ -492,6 +493,7 @@
 		A68ABCA124ABCFFA00715EBD /* SPCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPCardViewController.swift; path = Classes/SPCardViewController.swift; sourceTree = "<group>"; };
 		A68ABCA524ABFA5800715EBD /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		A68ABCA724ABFB5300715EBD /* SPShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPShadowView.swift; sourceTree = "<group>"; };
+		A6A287B424B4CA860053FF80 /* SPSnappingSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSnappingSliderTests.swift; sourceTree = "<group>"; };
 		A6C0589224AD2B8F006BC572 /* SPNoteHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPNoteHistoryViewController.swift; path = Classes/SPNoteHistoryViewController.swift; sourceTree = "<group>"; };
 		A6C0589324AD2B8F006BC572 /* SPNoteHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SPNoteHistoryViewController.xib; path = Classes/SPNoteHistoryViewController.xib; sourceTree = "<group>"; };
 		A6C0589624AD375A006BC572 /* SPNoteEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNoteEditorViewController.swift; sourceTree = "<group>"; };
@@ -1058,6 +1060,14 @@
 			path = config;
 			sourceTree = "<group>";
 		};
+		A6A287B324B4C9FE0053FF80 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A6A287B424B4CA860053FF80 /* SPSnappingSliderTests.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		A6C0589124AD2B00006BC572 /* Note History */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,6 +1328,7 @@
 				B55AC57822D27B7F00D8CEB2 /* Settings */,
 				B55AC57B22D27BA300D8CEB2 /* Tools */,
 				B543C7DD23CF6A8300003A80 /* Notes List */,
+				A6A287B324B4C9FE0053FF80 /* History */,
 				B58218A31FCC45320094ECA1 /* SimplenoteTests-Bridging-Header.h */,
 				B582189B1FCC45170094ECA1 /* Info.plist */,
 			);
@@ -2414,6 +2425,7 @@
 				B51F6DD32460D12B0074DDD9 /* AuthenticationValidatorTests.swift in Sources */,
 				B5421F4623CE7DEB004DDC19 /* ResultsControllerUIKitTests.swift in Sources */,
 				B5421F3C23CE7A14004DDC19 /* Constants.swift in Sources */,
+				A6A287B524B4CA860053FF80 /* SPSnappingSliderTests.swift in Sources */,
 				B5421F3F23CE7A1C004DDC19 /* MockupStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

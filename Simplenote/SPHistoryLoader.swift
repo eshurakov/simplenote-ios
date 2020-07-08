@@ -12,7 +12,7 @@ final class SPHistoryLoader {
         let content: String
     }
 
-    private let bucket: SPBucket
+    private let versionsFetcher: VersionsFetcher
     private let simperiumKey: String
     private let amountOfVersionsToLoad: Int
 
@@ -26,10 +26,10 @@ final class SPHistoryLoader {
     ///     - simperiumKey: Key of Object for which to load history
     ///     - currentVersion: Current version of Object. Used to calculate the amount of available versions to load
     ///
-    init(bucket: SPBucket, simperiumKey: String, currentVersion: Int) {
-        self.bucket = bucket
+    init(versionsFetcher: VersionsFetcher, simperiumKey: String, currentVersion: Int) {
+        self.versionsFetcher = versionsFetcher
         self.simperiumKey = simperiumKey
-        amountOfVersionsToLoad = min(currentVersion, Constants.maxNumberOfVersions)
+        amountOfVersionsToLoad = max(0, min(currentVersion, Constants.maxNumberOfVersions))
     }
 
     /// Load verions
@@ -43,9 +43,13 @@ final class SPHistoryLoader {
         }
 
         items = []
-        self.completion = completion
+        guard amountOfVersionsToLoad > 0 else {
+            completion([])
+            return
+        }
 
-        bucket.requestVersions(Int32(amountOfVersionsToLoad), key: simperiumKey)
+        self.completion = completion
+        versionsFetcher.requestVersions(Int32(amountOfVersionsToLoad), key: simperiumKey)
     }
 }
 
@@ -92,7 +96,7 @@ extension SPHistoryLoader {
         let bucket = SPAppDelegate.shared().simperium.bucket(forName: Note.classNameWithoutNamespaces)!
         let version = Int(note.version() ?? "1") ?? 1
 
-        self.init(bucket: bucket,
+        self.init(versionsFetcher: bucket,
                   simperiumKey: note.simperiumKey,
                   currentVersion: version)
     }

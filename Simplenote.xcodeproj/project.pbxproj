@@ -146,6 +146,10 @@
 		A6C0589D24AE95AD006BC572 /* SPHistoryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0589C24AE95AD006BC572 /* SPHistoryLoader.swift */; };
 		A6C0589F24AE9B12006BC572 /* SPNoteEditorViewControllerSwiftCollaborators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0589E24AE9B12006BC572 /* SPNoteEditorViewControllerSwiftCollaborators.swift */; };
 		A6E1E78924B5196C008A44BC /* SPNoteHistoryControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1E78824B5196C008A44BC /* SPNoteHistoryControllerDelegate.swift */; };
+		A6E1E78B24B660CB008A44BC /* SPHistoryLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1E78A24B660CB008A44BC /* SPHistoryLoaderTests.swift */; };
+		A6E1E78E24B66E7D008A44BC /* VersionsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1E78D24B66E7D008A44BC /* VersionsFetcher.swift */; };
+		A6E1E79024B66E9E008A44BC /* SPBucket+VersionsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1E78F24B66E9E008A44BC /* SPBucket+VersionsFetcher.swift */; };
+		A6E1E79224B67449008A44BC /* MockupVersionsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1E79124B67449008A44BC /* MockupVersionsFetcher.swift */; };
 		B504D4DE23D2014200AEED27 /* IndexPath+Simplenote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504D4DD23D2014200AEED27 /* IndexPath+Simplenote.swift */; };
 		B504D4E023D2018800AEED27 /* ResultsObjectChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504D4DF23D2018800AEED27 /* ResultsObjectChange.swift */; };
 		B504D4E223D201C300AEED27 /* ResultsSectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B504D4E123D201C300AEED27 /* ResultsSectionChange.swift */; };
@@ -503,6 +507,10 @@
 		A6C0589C24AE95AD006BC572 /* SPHistoryLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHistoryLoader.swift; sourceTree = "<group>"; };
 		A6C0589E24AE9B12006BC572 /* SPNoteEditorViewControllerSwiftCollaborators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNoteEditorViewControllerSwiftCollaborators.swift; sourceTree = "<group>"; };
 		A6E1E78824B5196C008A44BC /* SPNoteHistoryControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNoteHistoryControllerDelegate.swift; sourceTree = "<group>"; };
+		A6E1E78A24B660CB008A44BC /* SPHistoryLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHistoryLoaderTests.swift; sourceTree = "<group>"; };
+		A6E1E78D24B66E7D008A44BC /* VersionsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionsFetcher.swift; sourceTree = "<group>"; };
+		A6E1E78F24B66E9E008A44BC /* SPBucket+VersionsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SPBucket+VersionsFetcher.swift"; sourceTree = "<group>"; };
+		A6E1E79124B67449008A44BC /* MockupVersionsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupVersionsFetcher.swift; sourceTree = "<group>"; };
 		A774E3E4F5041D36FBE400BD /* Pods-Automattic-SimplenoteShare.distribution adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automattic-SimplenoteShare.distribution adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Automattic-SimplenoteShare/Pods-Automattic-SimplenoteShare.distribution adhoc.xcconfig"; sourceTree = "<group>"; };
 		AE066B9C23C9166D41F1A732 /* Pods-SimplenoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplenoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplenoteTests/Pods-SimplenoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B303123B163A5C7805D10DC7 /* Pods-Automattic-Simplenote.distribution adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automattic-Simplenote.distribution adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Automattic-Simplenote/Pods-Automattic-Simplenote.distribution adhoc.xcconfig"; sourceTree = "<group>"; };
@@ -1066,6 +1074,8 @@
 			isa = PBXGroup;
 			children = (
 				A6A287B424B4CA860053FF80 /* SPSnappingSliderTests.swift */,
+				A6E1E78A24B660CB008A44BC /* SPHistoryLoaderTests.swift */,
+				A6E1E79124B67449008A44BC /* MockupVersionsFetcher.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -1077,9 +1087,17 @@
 				A6C0589324AD2B8F006BC572 /* SPNoteHistoryViewController.xib */,
 				A6C0589A24AD5205006BC572 /* SPNoteHistoryController.swift */,
 				A6E1E78824B5196C008A44BC /* SPNoteHistoryControllerDelegate.swift */,
-				A6C0589C24AE95AD006BC572 /* SPHistoryLoader.swift */,
 			);
 			name = "Note History";
+			sourceTree = "<group>";
+		};
+		A6E1E78C24B66E6D008A44BC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A6C0589C24AE95AD006BC572 /* SPHistoryLoader.swift */,
+				A6E1E78D24B66E7D008A44BC /* VersionsFetcher.swift */,
+			);
+			name = History;
 			sourceTree = "<group>";
 		};
 		B504D4DB23D1FBB400AEED27 /* ResultsController */ = {
@@ -1283,6 +1301,7 @@
 				B50E99F3234242130092F274 /* UISearchBar+Simplenote.swift */,
 				B5DF734322A56E2800602CE7 /* UserDefaults+Simplenote.swift */,
 				B5AEC38323FAC5D600D24221 /* DateFormatter+Simplenote.swift */,
+				A6E1E78F24B66E9E008A44BC /* SPBucket+VersionsFetcher.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1388,6 +1407,7 @@
 		B5BE053E1AB751FD002417BF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A6E1E78C24B66E6D008A44BC /* History */,
 				B51F6DCF2460C3D80074DDD9 /* Onboarding */,
 				B504D4DB23D1FBB400AEED27 /* ResultsController */,
 				B5CBEF3F22D3AD92009DBE67 /* MigrationsHandler.swift */,
@@ -2236,6 +2256,7 @@
 				B5476BB223D88F49000E7723 /* SPTagTableViewCell.swift in Sources */,
 				B52AC186233587F8007B2E75 /* UITraitCollection+Simplenote.swift in Sources */,
 				B56A696922F9D57200B90398 /* NSMutableAttributedString+Simplenote.swift in Sources */,
+				A6E1E78E24B66E7D008A44BC /* VersionsFetcher.swift in Sources */,
 				B535F2E72399BFB600C1DDCA /* SPRatingsPromptView.swift in Sources */,
 				B5D982D222F8644000C37C29 /* SPSquaredButton.swift in Sources */,
 				46A3C96C17DFA81A002865AE /* SPOptionsViewController.m in Sources */,
@@ -2252,6 +2273,7 @@
 				B531090823D0B685002B0998 /* SPSimpleTextPrintFormatter.swift in Sources */,
 				B5CDE61F2150834C00C3FED4 /* Simperium+Simplenote.m in Sources */,
 				46A3C96E17DFA81A002865AE /* SPPopoverContainerViewController.m in Sources */,
+				A6E1E79024B66E9E008A44BC /* SPBucket+VersionsFetcher.swift in Sources */,
 				46A3C96F17DFA81A002865AE /* SPButton.m in Sources */,
 				B51F6DD12460C3EE0074DDD9 /* AuthenticationValidator.swift in Sources */,
 				46A3C97117DFA81A002865AE /* UIButton+Images.m in Sources */,
@@ -2427,7 +2449,9 @@
 				B5D367BE23ECF42D0024215D /* NSStringCondensingTests.swift in Sources */,
 				B51D7C7923D9CFA4005D4B77 /* StringSimplenoteTests.swift in Sources */,
 				B51F6DD32460D12B0074DDD9 /* AuthenticationValidatorTests.swift in Sources */,
+				A6E1E79224B67449008A44BC /* MockupVersionsFetcher.swift in Sources */,
 				B5421F4623CE7DEB004DDC19 /* ResultsControllerUIKitTests.swift in Sources */,
+				A6E1E78B24B660CB008A44BC /* SPHistoryLoaderTests.swift in Sources */,
 				B5421F3C23CE7A14004DDC19 /* Constants.swift in Sources */,
 				A6A287B524B4CA860053FF80 /* SPSnappingSliderTests.swift in Sources */,
 				B5421F3F23CE7A1C004DDC19 /* MockupStorage.swift in Sources */,
